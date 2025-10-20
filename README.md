@@ -1,4 +1,6 @@
-# Open Chinese <-> English Dcitionary
+# Open English -> Chinese Dcitionary
+
+- 基于 [wordfreq](https://github.com/rspeer/wordfreq) 项目提供的英语词频表构建
 
 ## Sample
 
