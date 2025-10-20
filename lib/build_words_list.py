@@ -16,4 +16,7 @@ def build_words_list(path: str = 'words.txt', lang: str = 'en', size: int = 2600
     remove(file)
     build_words_list(path)
 
-build_words_list()
+def read_words_list(path: str = 'words.txt') -> list[str]:
+  file = Path(path)
+  return file.read_text().strip().split('\n')
+
