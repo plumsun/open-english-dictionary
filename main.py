@@ -7,7 +7,7 @@ from lib.query import get_definition
 
 def main():
     # Ensure we have the words list
-    build_words_list(size=20)
+    build_words_list()
 
     # Read the words list
     words = read_words_list()
