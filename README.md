@@ -25,15 +25,9 @@ open-e2c-dictionary
 
 ## 快速开始
 
-1. **准备环境**
-   - 安装依赖：`pip install -r requirements.txt` 或使用项目提供的 `pyproject.toml`。
-   - 根据 `.env.example` 配置大模型服务（API_KEY、API_URL、API_MODEL）。
+**获取数据**
 
-2. **生成词条**
-   - 运行 `python3 main.py`，读取 `words.txt` 中的词汇，通过 `lib/query.py` 的 system prompt 批量生成 JSON。
-
-3. **获取数据**
-   - 直接克隆仓库，或在 [Release](https://github.com/ahpxex/open-e2c-dictionary/releases) 页面下载最新 zip 包。
+- 直接克隆仓库，或在 [Release](https://github.com/ahpxex/open-e2c-dictionary/releases) 页面下载最新 zip 包。
 
 ---
 
@@ -100,11 +94,11 @@ open-e2c-dictionary
 
 ## 数据质量与维护工具
 
-| 脚本 | 作用 | 用法提示 |
-| --- | --- | --- |
-| `check_json_structure.py` | 校验所有词条是否符合 system prompt 结构，若发现违规词条，可选择删除后重新生成。 | `uv run check_json_structure.py` |
-| `generate_json_template.py` | 根据现有词条推导出包含全部出现过的字段的模板，辅助扩展或对齐结构。 | `uv run generate_json_template.py` |
-| `clean_json_entries.py` | 清除词条中空的键值对，若对象/数组因此为空则整体删除。默认 dry-run，可配合 `--apply` 落盘。 | `uv run clean_json_entries.py --apply` |
+| 脚本                        | 作用                                                                                       | 用法提示                               |
+| --------------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------- |
+| `check_json_structure.py`   | 校验所有词条是否符合 system prompt 结构，若发现违规词条，可选择删除后重新生成。            | `uv run check_json_structure.py`       |
+| `generate_json_template.py` | 根据现有词条推导出包含全部出现过的字段的模板，辅助扩展或对齐结构。                         | `uv run generate_json_template.py`     |
+| `clean_json_entries.py`     | 清除词条中空的键值对，若对象/数组因此为空则整体删除。默认 dry-run，可配合 `--apply` 落盘。 | `uv run clean_json_entries.py --apply` |
 
 > 建议在提交前按顺序执行：`clean_json_entries.py --apply` → `check_json_structure.py`，确保数据干净可靠。
 
