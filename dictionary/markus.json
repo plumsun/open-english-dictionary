@@ -2,9 +2,6 @@
   "word": "markus",
   "pronunciation": "mahr·koo·uhs",
   "concise_definition": "n. 马库斯（男性名）",
-  "forms": {
-    "none": ""
-  },
   "definitions": [
     {
       "pos": "noun",
@@ -13,6 +10,5 @@
       "example_en": "Markus is the team leader and has been with the company for over a decade.",
       "example_cn": "马库斯是团队负责人，已在公司工作十余年。"
     }
-  ],
-  "comparison": []
+  ]
 }
