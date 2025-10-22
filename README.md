@@ -31,7 +31,7 @@ open-e2c-dictionary
 
 ---
 
-## 数据样例（与原文一致）
+## 数据样例
 
 在本项目的 `dictionary` 目录下，存放了 25,318 个这样的 JSON 文件，每个 JSON 文件严格按照 `[单词名称].json` 的格式来命名。
 
@@ -80,7 +80,7 @@ open-e2c-dictionary
 
 ---
 
-## 技术实现（与原文一致并补充细节）
+## 技术实现
 
 现有的词典条目由在 4 张 4090 显卡的计算服务器上运行的 `Qwen/Qwen3-Next-80B-A3B-Instruct` 大模型构建，所有的条目均使用 `lib/query.py` 中的 system prompt 来生成，如果你需要构建自己的词库，可以先按照 `.env.example` 中的实例，配置好大模型服务提供商，然后运行 `main.py` 即可。
 
