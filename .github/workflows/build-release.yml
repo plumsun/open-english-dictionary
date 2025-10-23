@@ -43,11 +43,43 @@ jobs:
           sha256sum * > checksums.txt
           cat checksums.txt
 
-      - name: Upload artifacts
+      - name: Upload zip artifact
+        if: contains(github.event.inputs.formats || 'zip tar.gz tar.bz2 tar.xz', 'zip')
         uses: actions/upload-artifact@v4
         with:
-          name: dictionary-archives
-          path: dist/*
+          name: dictionary-zip
+          path: dist/*.zip
+          retention-days: 30
+
+      - name: Upload tar.gz artifact
+        if: contains(github.event.inputs.formats || 'zip tar.gz tar.bz2 tar.xz', 'tar.gz')
+        uses: actions/upload-artifact@v4
+        with:
+          name: dictionary-tar-gz
+          path: dist/*.tar.gz
+          retention-days: 30
+
+      - name: Upload tar.bz2 artifact
+        if: contains(github.event.inputs.formats || 'zip tar.gz tar.bz2 tar.xz', 'tar.bz2')
+        uses: actions/upload-artifact@v4
+        with:
+          name: dictionary-tar-bz2
+          path: dist/*.tar.bz2
+          retention-days: 30
+
+      - name: Upload tar.xz artifact
+        if: contains(github.event.inputs.formats || 'zip tar.gz tar.bz2 tar.xz', 'tar.xz')
+        uses: actions/upload-artifact@v4
+        with:
+          name: dictionary-tar-xz
+          path: dist/*.tar.xz
+          retention-days: 30
+
+      - name: Upload checksums
+        uses: actions/upload-artifact@v4
+        with:
+          name: checksums
+          path: dist/checksums.txt
           retention-days: 30
 
       - name: Create Release
