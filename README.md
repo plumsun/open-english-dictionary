@@ -1,8 +1,16 @@
 # Open English -> Chinese Dictionary
 
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
+
 开源的、由大模型构建的庞大英汉词典，尤其注重详细的中文解释，更容易获取到词语的微妙含义。
 
 - 推荐前端实现：[Aictionary](https://github.com/ahpxex/aictionary)
+
+
+
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
+
 
 ---
 
