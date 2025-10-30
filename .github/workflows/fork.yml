@@ -34,7 +34,7 @@ jobs:
       - name: Merge upstream branch
         run: |
           git checkout release
-          git merge upstream/release --no-edit || true
+          git merge upstream/master --no-edit || true
             echo "Merge failed due to conflicts or errors. Please check the logs for details."
           fi
 
