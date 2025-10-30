@@ -29,6 +29,11 @@ jobs:
           git remote add upstream https://github.com/ahpxex/open-dictionary.git
           git fetch upstream
 
+      - name: Create release branch if not exists
+        run: |
+          git checkout master
+          git checkout -b release || git checkout release
+
       # 避免交互式合并信息
       # main	目标分支（如果是 dev、release 等分支，请改名）
       - name: Merge upstream master into release
