@@ -31,12 +31,12 @@ jobs:
 
       # 避免交互式合并信息
       # main	目标分支（如果是 dev、release 等分支，请改名）
-      - name: Merge upstream branch
+      - name: Merge upstream master into release
         run: |
           git checkout release
-          git merge upstream/master --no-edit || true
-            echo "Merge failed due to conflicts or errors. Please check the logs for details."
-          fi
+          git merge upstream/master --no-edit || echo "Merge failed due to conflicts or errors. Please check the logs for details."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # GITHUB_TOKEN	GitHub 自动提供，无需额外配置权限
 
