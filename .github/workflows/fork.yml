@@ -43,6 +43,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # GITHUB_TOKEN	GitHub 自动提供，无需额外配置权限
+
       - name: Pull latest release branch from origin
         run: |
           git pull origin release --no-edit || echo "Pull failed, maybe branch is new."
